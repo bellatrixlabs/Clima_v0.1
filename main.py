@@ -12,9 +12,7 @@ console = Console()
 console.print("[bold]☀️ Weather\n", justify="center")
 console.rule(style="white")
 
-
 site_clima = "https://www.climaeradar.com.br/previsao-tempo/"
-
 
 while True:
     cidade = input("Digite uma cidade: ")
@@ -46,7 +44,6 @@ while True:
         lua = soup.find("div", class_="moon-text")
 
         qualidade_ar = soup.find("wo-air-quality-indicator")
-        
        
         console.print(
             Panel(
@@ -58,14 +55,9 @@ while True:
                 f"Pôr-do-sol: {por_do_sol.text}\n\n"
                 f"Qualidade do ar: {qualidade_ar.text}\n\n"
                 f"Lua: {lua.text}\n\n",
-                
-                 
             )
         )
         
-        
-
-
     else:
         console.print("[red]❌️ Acesso negado. \n")
         time.sleep(1)
